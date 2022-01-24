@@ -12,17 +12,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/', function () {
+    return view('home', [
+        "title" => "Home"
+    ]);
+});
+
 Route::get('/about', function () {
     return view('about', [
+        "title" => "about",
         "nama" => "Muhammad Rizqi Gunan",
         "email" => "rizqicemet12@gmail.com",
         "gambar" => "Gunan.jpg"
@@ -30,5 +32,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/gallery', function () {
-    return view('gallery');
+    return view('gallery', [
+        "title" => "Gallery"
+    ]);
 });
